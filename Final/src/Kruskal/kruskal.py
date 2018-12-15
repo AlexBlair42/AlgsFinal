@@ -1,5 +1,4 @@
 # Referenced https://www.saltycrane.com/blog/2008/01/how-to-find-intersection-and-union-of/ for unions.
-# Referenced https://www.geeksforgeeks.org/detect-cycle-in-a-graph/ for checking if acyclic.
 
 # File Input
 file = open("matrix2.txt")
@@ -18,7 +17,7 @@ visit = [False] * len(vertices)
 r = [False] * len(vertices)
 
 
-#Checking to see if there are any cycles in the minimum spanning tree.
+# Checking to see if there are any cycles in the minimum spanning tree.
 def isAcyclic(x):
 	for num in range(0,len(graph)):
 		if visit[num] == True and visit[num+1] == False:
@@ -51,6 +50,7 @@ def kruskal():
 	
 # Set output to the minimum spanning tree.
 output = kruskal()
+output.pop(0)
 
 
 # Add up the cost of the spanning tree.
@@ -59,6 +59,5 @@ for x in range(0, len(output)):
 
 
 # Display the minimum spanning tree and the total cost.
-#print(output)
-print(cost)
+print("Total cost: ",cost)
 print(output)
